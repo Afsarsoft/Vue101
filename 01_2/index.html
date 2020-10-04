@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A First App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div id="app">
+    <div>
+      <label for="goal">Goal</label>
+      <!-- Using the directive v-model we connect data to Vue app  -->
+      <!-- v-model performs two way binding, taking the data and modifying it -->
+      <input type="text" id="goal" v-model="enteredValue" />
+      <!-- communicating with Vue with directive v-on to listen to event -->
+      <!-- We are telling Vue to listen to click event -->
+      <button v-on:click="addGoal">Add Goal</button>
+    </div>
+    <ul>
+      <!-- v-for, Iterating Over Items -->
+      <!--{{}} called Interpolation,Vue looks in data object for it-->
+      <li v-for="goal in goals">{{ goal }}</li>
+    </ul>
+  </div>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

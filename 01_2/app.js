@@ -5,7 +5,7 @@
 // createApp takes a JavaScript object where we configure this Vue app
 Vue.createApp({
   // Storing our app data
-  // Data function must return an object
+  // Data function must return always an object
   data() {
     return {
       goals: [],

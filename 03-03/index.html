@@ -13,16 +13,15 @@
 
 <body>
   <header>
-    <h1>Vue Course Goals</h1>
+    <h1>Vue Events</h1>
   </header>
-  <section id="user-goal">
-    <h2>My Course Goal</h2>
-    <!--{{}} Called Interpolation,Vue looks in data object for it-->
-    <p>{{ courseGoal }}</p>
-    <!-- We can hard code the link but let's get it dynamically -->
-    <!-- here we need directive v-bind, to bind an set the element -->
-    <!-- Basically, V-bind sets the value of an attribute. -->
-    <p>Learn more <a v-bind:href="vueLink">about Vue</a>.</p>
+  <section id="events">
+    <h2>Events in Action</h2>
+    <!-- With our without parentheses will work, without more JS friendly -->
+    <!-- <button v-on:click="add()">Add</button> -->
+    <button v-on:click="add">Add</button>
+    <button v-on:click="reduce">Remove</button>
+    <p>Result: {{ counter }}</p>
   </section>
 </body>
 

@@ -19,12 +19,22 @@
     <h2>My course goals</h2>
     <input type="text" v-model="enteredGoalValue" />
     <button @click="addGoal">Add Goal</button>
-    <!-- Do not show below if we have goals -->
-    <!-- can have any truthy value  -->
     <p v-if="goals.length === 0">No goals have been added yet - please start adding some!</p>
-    <ul>
-      <li>Goal</li>
+    <ul v-else>
+      <!-- we want to display list of goals with index -->
+      <li v-for="(goal, index) in goals">{{ index + 1}} - {{ goal }}</li>
     </ul>
+    <!-- some examples for v-for -->
+    <!-- <ul> -->
+    <!-- range of numbers  -->
+    <!-- <li v-for="num in 10">{{ num }}</li> -->
+    <!-- </ul> -->
+    <!-- <ul> -->
+    <!-- Looping through object -->
+    <!-- <li v-for="value in {name: 'Jim', age: 30}">{{ value }}</li> -->
+    <!-- Getting key and index as well -->
+    <!-- <li v-for="(value, key, index) in {name: 'Jim', age: 30}">{{ key }} : {{ value }} - {{ index }}</li> -->
+    <!-- </ul> -->
   </section>
 </body>
 

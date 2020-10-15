@@ -19,11 +19,10 @@
     <h2>My course goals</h2>
     <input type="text" v-model="enteredGoalValue" />
     <button @click="addGoal">Add Goal</button>
-    <!-- Do not show below if we have goals -->
-    <!-- can have any truthy value  -->
     <p v-if="goals.length === 0">No goals have been added yet - please start adding some!</p>
-    <ul>
-      <li>Goal</li>
+    <ul v-else>
+      <!-- we want to display list of goals -->
+      <li v-for="goal in goals">{{ goal }}</li>
     </ul>
   </section>
 </body>

@@ -19,11 +19,15 @@
     <h2>My course goals</h2>
     <input type="text" v-model="enteredGoalValue" />
     <button @click="addGoal">Add Goal</button>
-    <!-- Do not show below if we have goals -->
-    <!-- can have any truthy value  -->
     <p v-if="goals.length === 0">No goals have been added yet - please start adding some!</p>
-    <ul>
-      <li>Goal</li>
+    <ul v-else>
+      <!-- as best practice always use key to uniquely identify the elements with v-for -->
+      <li v-for="(goal, index) in goals" :key="goal" @click="removeGoal(index)">
+        <!-- Consider inside paragraph -->
+        <p>{{ index + 1}} - {{ goal }}</p>
+        <!-- if we have input the click will remove it. To prevent it, we use stop modifier-->
+        <input type="text" @click.stop>
+      </li>
     </ul>
   </section>
 </body>

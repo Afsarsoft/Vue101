@@ -5,8 +5,9 @@ const app = Vue.createApp({
       name: '',
     };
   },
-  // For most calculations based on other values we should using Computed properties/methods
+  // For most calculations based on other data we should use Computed 
   // They basically behave as data properties to avoid getting call each time
+  // Only use with data that depends on other data 
   computed: {
     fullname() {
       console.log('Running agin ...');

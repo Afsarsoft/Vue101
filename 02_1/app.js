@@ -9,6 +9,6 @@ const app = Vue.createApp({
   }
 });
 
-// mount to CSS element that we want to control
+// Connect Vue to HTML 
 app.mount('#user-goal');
 

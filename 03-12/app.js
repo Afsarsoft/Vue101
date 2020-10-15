@@ -6,6 +6,7 @@ const app = Vue.createApp({
     };
   },
   // When we want to monitor and watch for a property, we use watchers
+  // Use for no update cases 
   watch: {
     // we want to reset the counter when reach 50
     counter(value) {
